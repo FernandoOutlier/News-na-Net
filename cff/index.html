@@ -1,0 +1,1823 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head> <script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+<meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+  <script type="rocketlazyloadscript">
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+
+  ttq.load('CCM7E2JC77UB1O51G99G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+  
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="uri-translation" content="on" />
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+  var gtm4wp_datalayer_name = "dataLayer";
+  var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- This site is optimized with the Yoast SEO Premium plugin v19.6 (Yoast SEO v19.13) - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>Como ficar famoso? Veja as principais dicas - SUA IMPRENSA</title><style id="rocket-critical-css">a.glink{text-decoration:none}a.glink span{margin-right:7px;font-size:20px;vertical-align:middle}a.glink img{vertical-align:middle;display:inline;border:0;padding:0;margin:0;opacity:0.8}ul{box-sizing:border-box}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}body,h1,h2,html,li,ul{margin:0;padding:0;border:0}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}main{display:block}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}button{font-family:inherit;font-size:100%;margin:0}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}body,button{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-weight:400;text-transform:none;font-size:17px;line-height:1.5}h1,h2{font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit}h1{font-size:42px;margin-bottom:20px;line-height:1.2em;font-weight:400;text-transform:none}h2{font-size:35px;margin-bottom:20px;line-height:1.2em;font-weight:400;text-transform:none}ul{margin:0 0 1.5em 3em}ul{list-style:disc}img{height:auto;max-width:100%}button{background:#55555e;color:#fff;border:1px solid transparent;-webkit-appearance:button;padding:10px 20px}a{text-decoration:none}.size-full{max-width:100%;height:auto}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}.main-navigation{z-index:100;padding:0;clear:both;display:block}.main-navigation a{display:block;text-decoration:none;font-weight:400;text-transform:none;font-size:15px}.main-navigation ul{list-style:none;margin:0;padding-left:0}.main-navigation .main-nav ul li a{padding-left:20px;padding-right:20px;line-height:60px}.inside-navigation{position:relative}.main-navigation .inside-navigation{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between}.main-navigation .main-nav>ul{display:flex;flex-wrap:wrap;align-items:center}.main-navigation li{position:relative}.site-header{position:relative}.inside-header{padding:20px 40px}.site-logo{display:inline-block;max-width:100%}.site-header .header-image{vertical-align:middle}.inside-header{display:flex;align-items:center}.header-widget{margin-left:auto}.nav-float-right .header-widget{margin-left:20px}.nav-float-right #site-navigation{margin-left:auto}.posted-on .updated{display:none}.byline,.single .byline{display:inline}.entry-content:not(:first-child){margin-top:2em}.entry-header,.site-content{word-wrap:break-word}.entry-title{margin-bottom:0}.entry-meta{font-size:85%;margin-top:.5em;line-height:1.5}.widget-area .widget{padding:40px}.footer-widgets .widget :last-child,.sidebar .widget :last-child{margin-bottom:0}.widget-title{margin-bottom:30px;font-size:20px;line-height:1.5;font-weight:400;text-transform:none}.widget ul{margin:0}.sidebar .widget:last-child{margin-bottom:0}.widget ul li{list-style-type:none;position:relative;margin-bottom:.5em}.site-content{display:flex}.grid-container{margin-left:auto;margin-right:auto;max-width:1200px}.sidebar .widget,.site-main>*{margin-bottom:20px}.separate-containers .inside-article{padding:40px}.separate-containers .site-main{margin:20px}.separate-containers.right-sidebar .site-main{margin-left:0}.separate-containers .inside-right-sidebar{margin-top:20px;margin-bottom:20px}.separate-containers .site-main>:last-child{margin-bottom:0}.featured-image{line-height:0}.separate-containers .featured-image{margin-top:20px}.separate-containers .inside-article>.featured-image{margin-top:0;margin-bottom:2em}.gp-icon{display:inline-flex;align-self:center}.gp-icon svg{height:1em;width:1em;top:.125em;position:relative;fill:currentColor}.icon-menu-bars svg:nth-child(2){display:none}.container.grid-container{width:auto}.menu-toggle{display:none}.menu-toggle{padding:0 20px;line-height:60px;margin:0;font-weight:400;text-transform:none;font-size:15px}.menu-toggle .mobile-menu{padding-left:3px}.menu-toggle .gp-icon+.mobile-menu{padding-left:9px}button.menu-toggle{background-color:transparent;flex-grow:1;border:0;text-align:center}.mobile-menu-control-wrapper{display:none;margin-left:auto;align-items:center}@media (max-width:768px){.inside-header{flex-direction:column;text-align:center}.site-header .header-widget{margin-top:1.5em;margin-left:auto;margin-right:auto;text-align:center}.site-content{flex-direction:column}.container .site-content .content-area{width:auto}.is-right-sidebar.sidebar{width:auto;order:initial}#main{margin-left:0;margin-right:0}body:not(.no-sidebar) #main{margin-bottom:0}.entry-meta{font-size:inherit}.entry-meta a{line-height:1.8em}}</style><link rel="preload" href="https://suaimprensa.com.br/wp-content/cache/min/1/01945e7b8e94897c416ea44a11c1ceec.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media="all" data-minify="1" />
+  <meta name="description" content="Como ficar famoso Instagram, Tiktok e Internet Como ficar famoso! Se você já se perguntou como ficar famoso, certamente este artigo é para você. E embora existam plataformas que possibilitem que isso" />
+  <link rel="canonical" href="https://suaimprensa.com.br/blog/como-ficar-famoso/" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Como ficar famoso? Veja as principais dicas para obter sucesso e fama." />
+  <meta property="og:description" content="Como ficar famoso! Se você já se perguntou como ficar famoso, certamente este artigo é para você. E embora existam plataformas que possibilitem que isso" />
+  <meta property="og:url" content="https://suaimprensa.com.br/blog/como-ficar-famoso/" />
+  <meta property="og:site_name" content="SUA IMPRENSA" />
+  <meta property="article:published_time" content="2021-08-18T08:56:00+00:00" />
+  <meta property="article:modified_time" content="2022-06-24T05:07:55+00:00" />
+  <meta property="og:image" content="https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg" />
+  <meta property="og:image:width" content="640" />
+  <meta property="og:image:height" content="480" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta name="author" content="Redator" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:label1" content="Escrito por" />
+  <meta name="twitter:data1" content="Redator" />
+  <meta name="twitter:label2" content="Est. tempo de leitura" />
+  <meta name="twitter:data2" content="18 minutos" />
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#article","isPartOf":{"@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/"},"author":{"name":"Redator","@id":"https://suaimprensa.com.br/#/schema/person/d1cfb3c8d400394df87bf0d75bad74b8"},"headline":"Como ficar famoso? Veja as principais dicas para obter sucesso e fama.","datePublished":"2021-08-18T08:56:00+00:00","dateModified":"2022-06-24T05:07:55+00:00","mainEntityOfPage":{"@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/"},"wordCount":3468,"publisher":{"@id":"https://suaimprensa.com.br/#organization"},"image":{"@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#primaryimage"},"thumbnailUrl":"https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg","articleSection":["Dicas","Marketing"],"inLanguage":"pt-BR"},{"@type":"WebPage","@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/","url":"https://suaimprensa.com.br/blog/como-ficar-famoso/","name":"Como ficar famoso? Veja as principais dicas - SUA IMPRENSA","isPartOf":{"@id":"https://suaimprensa.com.br/#website"},"primaryImageOfPage":{"@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#primaryimage"},"image":{"@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#primaryimage"},"thumbnailUrl":"https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg","datePublished":"2021-08-18T08:56:00+00:00","dateModified":"2022-06-24T05:07:55+00:00","description":"Como ficar famoso Instagram, Tiktok e Internet Como ficar famoso! Se você já se perguntou como ficar famoso, certamente este artigo é para você. E embora existam plataformas que possibilitem que isso","breadcrumb":{"@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://suaimprensa.com.br/blog/como-ficar-famoso/"]}]},{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#primaryimage","url":"https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg","contentUrl":"https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg","width":640,"height":480,"caption":"como ficar famoso"},{"@type":"BreadcrumbList","@id":"https://suaimprensa.com.br/blog/como-ficar-famoso/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://suaimprensa.com.br/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://suaimprensa.com.br/blog/"},{"@type":"ListItem","position":3,"name":"Dicas","item":"https://suaimprensa.com.br/dicas/"},{"@type":"ListItem","position":4,"name":"Como ficar famoso? Veja as principais dicas para obter sucesso e fama."}]},{"@type":"WebSite","@id":"https://suaimprensa.com.br/#website","url":"https://suaimprensa.com.br/","name":"SUA IMPRENSA","description":"Divulgador de Notícias","publisher":{"@id":"https://suaimprensa.com.br/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://suaimprensa.com.br/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"Organization","@id":"https://suaimprensa.com.br/#organization","name":"SUA IMPRENSA","url":"https://suaimprensa.com.br/","logo":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://suaimprensa.com.br/#/schema/logo/image/","url":"https://suaimprensa.com.br/wp-content/uploads/2022/04/logo-0A.svg","contentUrl":"https://suaimprensa.com.br/wp-content/uploads/2022/04/logo-0A.svg","width":2244,"height":709,"caption":"SUA IMPRENSA"},"image":{"@id":"https://suaimprensa.com.br/#/schema/logo/image/"},"sameAs":["https://www.instagram.com/suaimprensa/","https://www.youtube.com/channel/UCC6e6TvgbsEU2Z6PW-1IY5g"]},{"@type":"Person","@id":"https://suaimprensa.com.br/#/schema/person/d1cfb3c8d400394df87bf0d75bad74b8","name":"Redator","image":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://suaimprensa.com.br/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/122fdfaf2009c44265c07a09ab3a5622?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/122fdfaf2009c44265c07a09ab3a5622?s=96&d=mm&r=g","caption":"Redator"},"url":"https://suaimprensa.com.br/blog/author/r3dator/"}]}</script>
+  <!-- / Yoast SEO Premium plugin. -->
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Feed para SUA IMPRENSA &raquo;" href="https://suaimprensa.com.br/feed/" />
+<style>
+img.wp-smiley,
+img.emoji {
+  display: inline !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 1em !important;
+  width: 1em !important;
+  margin: 0 0.07em !important;
+  vertical-align: -0.1em !important;
+  background: none !important;
+  padding: 0 !important;
+}
+</style>
+  
+
+
+
+
+
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+<style id='generate-style-inline-css'>
+body{background-color:var(--base-3);color:var(--contrast);}a{color:var(--accent);}a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}a:hover, a:focus, a:active{color:var(--contrast);}.grid-container{max-width:1320px;}.wp-block-group__inner-container{max-width:1320px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:140px;}.generate-back-to-top{font-size:20px;border-radius:3px;position:fixed;bottom:30px;right:30px;line-height:40px;width:40px;text-align:center;z-index:10;transition:opacity 300ms ease-in-out;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#0050f9;}.has-contrast-color{color:#222222;}.has-contrast-background-color{background-color:#222222;}.has-contrast-2-color{color:#575760;}.has-contrast-2-background-color{background-color:#575760;}.has-contrast-3-color{color:#b2b2be;}.has-contrast-3-background-color{background-color:#b2b2be;}.has-base-color{color:#f0f0f0;}.has-base-background-color{background-color:#f0f0f0;}.has-base-2-color{color:#f7f8f9;}.has-base-2-background-color{background-color:#f7f8f9;}.has-base-3-color{color:#ffffff;}.has-base-3-background-color{background-color:#ffffff;}.has-accent-color{color:#0050f9;}.has-accent-background-color{background-color:#0050f9;}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:var(--contrast-2);}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:hover,.mobile-menu-control-wrapper .menu-toggle:focus,.has-inline-mobile-toggle #site-navigation.toggled{background-color:rgba(0, 0, 0, 0.02);}.main-navigation,.main-navigation ul ul{background-color:var(--base-3);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--accent);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--accent);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--accent);}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{background-color:var(--base-3);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 20px 0px 20px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:70%;}@media (max-width:768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+</style>
+
+
+
+
+
+
+
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" defer='defer' src='https://suaimprensa.com.br/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.6.1.3' id='gform_json-js'></script>
+<script id='gform_gravityforms-js-extra'>
+var gf_global = {"gf_currency_config":{"name":"Real brasileiro","symbol_left":"R$","symbol_right":"","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"BRL"},"base_url":"https:\/\/suaimprensa.com.br\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/suaimprensa.com.br\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"Nova linha adicionada.","rowRemoved":"Linha removida","formSaved":"O formul\u00e1rio foi salvo. O conte\u00fado cont\u00e9m o link para retornar e preencher o formul\u00e1rio."}};
+var gf_global = {"gf_currency_config":{"name":"Real brasileiro","symbol_left":"R$","symbol_right":"","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"BRL"},"base_url":"https:\/\/suaimprensa.com.br\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/suaimprensa.com.br\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"Nova linha adicionada.","rowRemoved":"Linha removida","formSaved":"O formul\u00e1rio foi salvo. O conte\u00fado cont\u00e9m o link para retornar e preencher o formul\u00e1rio."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Seg","tuesday":"Ter","wednesday":"Qua","thursday":"Qui","friday":"Sex","saturday":"S\u00e1b","sunday":"Dom"},"months":{"january":"janeiro","february":"fevereiro","march":"mar\u00e7o","april":"abril","may":"maio","june":"junho","july":"julho","august":"agosto","september":"setembro","october":"outubro","november":"novembro","december":"dezembro"},"firstDay":1,"iconText":"Selecione uma data"}};
+var gf_legacy_multi = {"16":""};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"Este tipo de arquivo n\u00e3o \u00e9 permitido. Deve ser um dos seguintes:","delete_file":"Excluir este arquivo","in_progress":"em progresso","file_exceeds_limit":"O arquivo excede o limite de tamanho.","illegal_extension":"Este tipo de arquivo n\u00e3o \u00e9 permitido.","max_reached":"O n\u00famero m\u00e1ximo arquivos permitidos foi atingido.","unknown_error":"Ocorreu um erro ao salvar o arquivo no servidor","currently_uploading":"Aguarde o envio ser completado","cancel":"Cancelar","cancel_upload":"Cancelar este envio","cancelled":"Cancelado"},"vars":{"images_url":"https:\/\/suaimprensa.com.br\/wp-content\/plugins\/gravityforms\/images"}};
+</script>
+<script type="rocketlazyloadscript" defer='defer' src='https://suaimprensa.com.br/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.6.1.3' id='gform_gravityforms-js'></script>
+<link rel="https://api.w.org/" href="https://suaimprensa.com.br/wp-json/" /><link rel="alternate" type="application/json" href="https://suaimprensa.com.br/wp-json/wp/v2/posts/97" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://suaimprensa.com.br/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://suaimprensa.com.br/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel='shortlink' href='https://suaimprensa.com.br/?p=97' />
+<link rel="alternate" type="application/json+oembed" href="https://suaimprensa.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsuaimprensa.com.br%2Fblog%2Fcomo-ficar-famoso%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://suaimprensa.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsuaimprensa.com.br%2Fblog%2Fcomo-ficar-famoso%2F&#038;format=xml" />
+<script type="rocketlazyloadscript">var gt_request_uri = '/blog/como-ficar-famoso/';</script>
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">
+  var dataLayer_content = {"pagePostType":"post","pagePostType2":"single-post","pageCategory":["dicas","marketing"],"pagePostAuthor":"Redator"};
+  dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-52PK6QH');
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<link rel="icon" href="https://suaimprensa.com.br/wp-content/uploads/2022/03/cropped-Divulgador-de-Noticias-SUA-IMPRE-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://suaimprensa.com.br/wp-content/uploads/2022/03/cropped-Divulgador-de-Noticias-SUA-IMPRE-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://suaimprensa.com.br/wp-content/uploads/2022/03/cropped-Divulgador-de-Noticias-SUA-IMPRE-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://suaimprensa.com.br/wp-content/uploads/2022/03/cropped-Divulgador-de-Noticias-SUA-IMPRE-1-270x270.jpg" />
+    <style id="wp-custom-css">
+      :root {
+    --brand-01: #C41D32;
+    --brand-02: #010024;
+    --brand-03: #0050f9;
+    --brand-04: #DFE3E8;
+    --inverse-01: #242537;
+      --bg-color: #fff;
+    --ui-01: #F4F5F7;
+    --ui-02: #DFE3E8;
+    --ui-03: #8D99AE;
+    --ui-04: #242537;
+    --ui-05: #14151E;
+    --text-01: #012b5d;
+    --text-02: #ffffff;
+    --text-03: #DA2037;
+    --support-01: #00002F;
+    --support-02: #e32620;
+    --bg-01: #fcfcfc;
+    --bg-green: #3abab5;
+    --bg-green-2: #33ae64;
+    --side-spacing: calc(var(--spacing-md) + 2vw);
+  --delta: hsla(158, 100%, 44%, 1);
+    --delta-hsl: 158, 100%, 54%;
+    --delta-h: 158;
+}
+p:empty {
+  display: none;
+}
+/* header */
+.site-header {
+border-bottom: solid 1px var(--brand-04);
+      box-shadow: 0 0 8px 3px rgb(0 0 0 / 20%);
+}
+
+/* header */
+
+
+/* menu */
+
+.has-inline-mobile-toggle #site-navigation.toggled {
+position: fixed;
+    width: 265px;
+    height: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 9999;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    left: auto;
+    right: -265px;
+transform: translate3d(-265px,0,0);
+    background-color: var(--base-3);
+   
+transition: transform .2s cubic-bezier(.16,.68,.43,.99);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+     
+}
+.has-inline-mobile-toggle #site-navigation{
+transition: all 0s ease-in-out;}
+
+.main-navigation.toggled .main-nav {
+    margin-top: 3.5em;
+}
+.has-inline-mobile-toggle #site-navigation.toggled {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px){.main-navigation {
+    z-index: 99999;
+}}
+
+button.menu-toggle {
+    background-color: transparent;
+    flex-grow: 1;
+    border: 0;
+    text-align: center;
+}
+
+.cta-hd a{
+background-color: var(--brand-03);
+    border-color: var(--brand-03);
+    color: var(--text-02) !important;
+    align-items: center;
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    font-size: 15px;
+    font-weight: 700;
+    height: 32px;
+    justify-content: center;
+    line-height: 0;
+    min-width: 72px;
+    overflow: visible;
+    padding: 0 14px!important;
+    transition: background-color .13s ease-out,border-color .13s ease-out;
+    white-space: nowrap;
+    width: auto;
+
+}
+
+.main-navigation a {
+    font-weight: 600;
+}
+/* fim menu */
+
+
+
+.homepage-hero {
+background: #000000;
+    background: linear-gradient(to right,#161824 0,#000000 50%,#030001 51%,#ff0057 100%);
+}
+
+
+.home.separate-containers .inside-article, .inside-header {
+    padding:0 40px;
+}
+.home.separate-containers .site-main {
+    margin: 0;
+}
+/* texto */ 
+.tx-branco{
+  color: var( --text-02);
+}
+.tx-centro, .centro{
+  text-align:center;
+}
+h2 > strong {
+    color: var(--brand-01);
+}
+/* text */
+.box {
+    backface-visibility: hidden;
+    cursor: pointer;
+    transition: box-shadow .15s ease-in-out,transform .15s ease-in-out;
+    background: #fff;
+    margin-bottom: 1.3rem;
+    margin-right: 0;
+    border-radius: 0.1875rem;
+    transition: .3s ease-in-out;
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    box-shadow: 0 0 11px #eaf0f6;
+    width: 100%;
+}
+.box p {
+    font-size: 0.9em;
+    font-weight: 300;
+}
+.box h3 {
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+/* mobile frist */
+@media (max-width: 768px){
+  .desktop{
+    display:none !important;
+  }
+  
+  .has-inline-mobile-toggle .header-widget, .has-inline-mobile-toggle #site-navigation {
+    flex-basis: auto !important;
+    flex-wrap: wrap;
+}
+  
+.site-header .header-widget {
+    margin-top: initial;
+}
+
+  .cta-hd a {
+    max-width: 90%;
+    margin: 0 auto;
+}
+  
+}
+/* fim mobile frist */
+
+/* carrocel */
+body .box-c1 .slick-slide .carousel-caption {
+padding: 40px 20px 0px!important;
+    box-shadow: 0 0 20px 0 rgba(3, 34, 71, 0.08);
+    padding: 60px 50px 50px;
+    background: #fff !important;
+    border-radius: 2px;
+    transition: all .5s cubic-bezier(.165, .84, .44, 1);
+    -webkit-transition: all .5s cubic-bezier(.165, .84, .44, 1);
+    -moz-transition: all .5s cubic-bezier(.165, .84, .44, 1);
+    -ms-transition: all .5s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .5s cubic-bezier(.165, .84, .44, 1);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: scale(.9);
+      min-height: 260px;
+  border-radius: 30px 16px 30px 10px;
+}
+
+
+body .box-c1 .slick-slide .carousel-caption:hover {
+    box-shadow: 0 0 20px 0 rgba(3, 34, 71, 0.08);
+    padding: 60px 50px 50px;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    cursor: pointer;
+}
+
+body .slick-slider .slick-prev:before, body .slick-slider .slick-next:before {
+    line-height: 1 !important;
+}
+
+body .slick-slider .slick-prev, body .slick-slider .slick-next {
+    width: 50px !important;
+    height: 50px !important;
+    display: block;
+    border-radius: 100%;
+    border: 2px solid var(--contrast-3) !important;
+    padding: 0 !important;
+}
+body .slick-slider .slick-prev {
+    left: -30px !important;
+}
+body .slick-slider .slick-next {
+    right: -30px !important;
+}
+body .slick-slider p{
+    margin-bottom: 0 !important;
+}
+body  .tdt-slider .tdt-slider-heading{
+  
+} {
+    font-size: 22px !important;
+    font-weight: bold !important;;
+}
+/* fim carrocel */
+body .parceiros .tdt-slider .tdt-slider-heading{
+   font-size: 16px !important;
+      font-size: 16px !important;
+    text-align: left;
+}
+
+/* depoimentos */
+body .depoimentos .slick-slide img{
+ border-radius: 30px 16px 30px 10px !important;
+  filter: grayscale(100%);
+}
+
+body .box-c1 .slick-slide .carousel-caption:hover img{
+  filter: grayscale(0%);
+}
+/* depoimentos */
+
+body .gform_wrapper.gravity-theme .gform_footer input[type="submit"]{
+  color: var(--text-02);
+    background-color: var(--brand-03);
+    width: 100%;
+  position:relative;
+      border-radius: 32px;
+}
+/* estilo imagens */
+
+.featured-image,.wp-post-image{
+    border-radius: 30px 16px 30px 10px;
+}
+/* estilo imagens */
+
+/* sidebar */
+.widget_categories ul li a{
+    background-color: #f5f8fa;
+    border-radius: 0.1875rem;
+    box-shadow: 0 1px 5px 0 #cbd6e2;
+    font-size: 1em;
+    font-weight: 700;
+    color: inherit;
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 0 0.5em 0.5em;
+    width: 100%;
+       margin: 0.3em 0 0;
+    min-width: 290px;
+      text-decoration: none;
+}
+
+.widget_categories ul li:nth-child(1) > a {
+ border-left: 5px solid #f5c26b;
+}
+.widget_categories ul li:nth-child(2) > a {
+border-left: 5px solid var(--bg-green);
+}
+.widget_categories ul li:nth-child(3) > a {
+ border-left: 5px solid #ff6900;
+}
+.widget_categories ul li:nth-child(4) > a {
+ border-left: 5px solid #673ab7;
+}
+.widget_categories ul li:nth-child(5) > a {
+ border-left: 5px solid  #f78da7;
+}
+.widget_categories ul li:nth-child(6) > a {
+ border-left: 5px solid #03a9f4;
+}
+
+/* fim sidebar */
+
+/* formulario */
+.gform_wrapper.gravity-theme .gfield-choice-input {
+    width: 28px;
+    height: 28px;
+}
+
+.gform_wrapper .gfield.gf_list_inline .gfield_checkbox .gchoice, .gform_wrapper .gfield.gf_list_inline .gfield_radio .gchoice {
+    padding: 10px 16px;
+}
+/* fim form */
+
+/* footer */
+.site-info, .footer-widgets{
+    background: var(--brand-02);
+      color: var(--text-02);
+}
+/* fim footer */
+.dep {
+    margin: 20px auto;
+    display: block;
+    border-radius: 30px 16px 30px 10px;
+}
+.bg-cartao {
+    width: 200px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -0 -0;
+}
+
+.bg-DC_1 {
+    width: 200px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -0 -100px;
+}
+.bg-egobr_1 {
+    width: 200px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -200px -0;
+}
+
+.bg-Joao {
+    width: 100px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -200px -100px;
+}
+
+.bg-maju {
+    width: 100px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -300px -100px;
+}
+
+.bg-marcos {
+    width: 100px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -0 -200px;
+}
+
+.bg-Rodrigo {
+    width: 100px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -100px -200px;
+}
+
+.bg-thiago {
+    width: 100px; height: 100px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-01-min.jpg') -200px -200px;
+}
+
+.bg-contato_01 {
+    width: 460px; height: 329px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-sec-min.png') -0 -0;
+}
+.bg-quem_somos {
+    width: 460px; height: 329px;
+    background: url('https://suaimprensa.com.br/wp-content/uploads/2022/04/css_sprites-sec-min.png') -460px -0;
+}
+
+.footer-widgets a {
+    color: var(--text-02);
+    text-decoration: none;
+}
+.footer-widgets a:hover, .footer-widgets a:focus, .footer-widgets a:active {
+       color: var(--accent);
+}
+
+.whatsapp-fixed-btn{
+    width: 1px;
+    height: 1px;
+    position: fixed;
+    bottom: 5rem;
+    right: 1.25rem;
+    z-index: 9999999999;
+}
+ 
+body .gt_white_content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 191111;
+    overflow: hidden;
+    outline: 0;
+    width: 400px;
+    height: 300px;
+    min-height: 300px;
+    max-width: 90vw;
+    margin: 10vh auto;
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    padding: 6px 16px;
+    background: var(--bg-color);
+}
+.switcher-popup > span:first-of-type {
+    display: none !important;
+}
+.ling-trs {
+    display: block;
+    float: right;
+   /* position: absolute; */
+top: 15px;
+right: 0;
+z-index: 1000;
+background-color: rgb(239, 242, 245);
+color: rgb(166, 176, 195);
+border-radius: 8px;
+padding: 3px 0px 3px 8px;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+body .gt_black_overlay {
+    z-index: 99999;
+}
+
+/* LP */
+.lp .wpb_wrapper ul li, ul.list-ck li{
+    background: url(//cdn2.hubspot.net/hubfs/53/Offers-Experiment-LP/page-assets/checkmark.svg) no-repeat left top;
+    padding-left: 3rem;
+    margin: 0.5rem 0;
+  list-style: none;
+}
+
+.lp .wpb_wrapper ul {
+    margin: 3rem 0;
+}
+
+.lp .main-navigation .inside-navigation, body.lp .main-navigation .menu-toggle, .lp .footer-widget-2,.lp .footer-widget-3, .lp .footer-widget-4{display:none !important;}
+
+body.lp  {
+    background: radial-gradient(circle at 50% 300px,hsla(var(--delta-hsl),.06),transparent 600px),#f6f7f9;
+}
+
+body.lp .inside-article{
+    background:none !important;
+      padding-bottom: 0;
+}
+.card--shadow {
+    background: #fff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 5px 25px 0 rgb(0 0 0 / 15%), 0 3px 3px 0 rgb(0 0 0 / 5%);
+    overflow: hidden;
+    transition: all .32s ease;
+      padding:20px;
+}
+
+
+body.lp .entry-content:not(:first-child) {
+    margin-top: 0em;
+}
+
+
+.lp-bg {
+background: #000000;
+    background: linear-gradient(to right,#161824 0,#000000 50%,#030001 51%,#ff0057 100%);
+}
+.lp .wpb_text_column a {
+    color: var(--ui-05);
+    text-decoration: none;
+}
+
+
+
+
+/* fim LP */
+.cta-texto {
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none!important;
+    line-height: 23px;
+    background: var(--text-02);
+    border: 1px solid var(--brand-03);
+    border-radius: 8px;
+    padding: 7px 10px;
+    color: var(--brand-03);
+}
+
+/* body .box-c2 .slick-slide img {
+transition: .3s;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;  IE 
+}*/
+
+.vc_toggle_title h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* blog CTA */
+.cta-blog {
+      position: relative;
+border-radius: 36px;
+    color: #fff;
+    min-width: 100%;
+    padding: 1rem 2rem;
+    max-height: 100%;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(145deg,#4772d9,#5be0e0);
+  box-shadow: rgb(0 0 0 / 10%) 0px 0.3rem 1rem 0px;
+}
+.cta-blog::before {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 50%;
+    background-image: url(//cdn2.hubspot.net/hubfs/53/assets/blog.hubspot.com/2018/topCircles.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: -15px;
+    background-position-x: -40px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+.cta-blog h3 {
+font-size: 1.8rem;
+    display: block;
+    font-weight: 700;
+color: var(--base);
+  z-index: 2;
+}
+
+.cta-blog p {
+  z-index: 2;
+     font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.cta-blog a {
+    color: #fff;
+}
+a.cta-blog-a{
+      line-height: 1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0.5em 0;
+    background-color: rgb(225, 11, 59);
+    overflow: visible;
+    text-decoration: none;
+    padding: 15px 20px;
+  z-index: 2;
+}
+
+.icon_lightning {
+background: url(https://suaimprensa.com.br/wp-content/uploads/2022/05/icon_lightning.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 75px;
+    height: 75px;
+    min-width: 75px;
+    position: relative;
+    top: 17px;
+  display: inline-block;
+}
+
+h1, h2 {
+    font-weight: 600;
+}
+
+.box-c2 .content-section{text-align:center;}
+
+.demo-lp .site-header {
+    background: #000 !important;
+    border-bottom: none;
+    box-shadow: none;
+}
+.demo-lp {
+   background: var(--wp--preset--color--black)!important;
+}
+
+.demo-lp .card--shadow {
+ background: transparent !important;
+    padding: 20px;
+}
+.demo-lp .tx-branco p a, .demo-lp h1{
+color: var(--text-02);
+}
+
+
+.demo-lp  .site-info, .demo-lp .footer-widgets {
+    background: var(--wp--preset--color--black);
+    color: var(--text-02);
+}
+
+body .cta-red .vc_btn3.vc_btn3-color-danger{
+background: linear-gradient(94deg, #BB0101 15.22%, #950E01 99.01%) !important;
+}
+
+body.demo-lp .carrocel-2 .slick-slide .carousel-caption {
+    background: transparent !important;
+    border: 1px solid;
+}
+
+.portfolio-slider__slide-img {
+    padding-right: 25px;
+}
+
+.portfolio-slider__slide-text, .portfolio-slider__slide-name {
+  text-align:left;
+  display:block;
+}
+
+.portfolio-slider__slide-img img {
+    width: 85px;
+    border-radius: 100px;
+    margin: 0 auto;
+    display: block;
+      border: 2px #d0d8e2 solid;
+}
+.portfolio-slider__slide-reviewer {
+    display: flex;
+    align-items: center;
+}
+.portfolio-slider__slide-text {
+    position: relative;
+    color: #121b24;
+    line-height: 1.4;
+    padding: 30px 15px 0px;
+  text-align:left;
+}
+body.demo-lp .carrocel-3 .slick-slider .slick-prev, body.demo-lp .carrocel-3 .slick-slider .slick-next{
+    border: none !important;
+      border: none !important;
+    bottom: -20% !important;
+  top:auto !important;
+}
+body.demo-lp .carrocel-3 .slick-slider .slick-prev{
+left: 0px !important;
+}
+
+body.demo-lp .carrocel-3 .slick-slider .slick-next{
+right: 65%!important;
+}
+body.demo-lp .site-logo a img{
+  display:none;
+}
+body.demo-lp .site-logo a { background:url('https://suaimprensa.com.br/wp-content/uploads/2022/04/logo-0B.svg') no-repeat center center;
+    background-size:140px 44px;
+    width: 140px;
+  display:block;
+    height:44px;
+  position:relative}
+
+ body.demo-lp .ling-trs { background-color: transparent;}     </style>
+    <noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+
+<body class="post-template-default single single-post postid-97 single-format-standard wp-custom-logo wp-embed-responsive right-sidebar nav-float-right separate-containers header-aligned-center dropdown-hover featured-image-active wpb-js-composer js-comp-ver-6.9.0 vc_responsive" itemtype="https://schema.org/Blog" itemscope>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><a class="screen-reader-text skip-link" href="#content" title="Pular para o conteúdo">Pular para o conteúdo</a>    <header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Site"  itemtype="https://schema.org/WPHeader" itemscope>
+      <div class="inside-header grid-container">
+        <div class="site-logo">
+          <a href="https://suaimprensa.com.br/" title="SUA IMPRENSA" rel="home" data-wpel-link="internal">
+            <img  class="header-image is-logo-image" alt="SUA IMPRENSA" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202244%20709'%3E%3C/svg%3E" title="SUA IMPRENSA" width="2244" height="709" data-lazy-src="https://suaimprensa.com.br/wp-content/uploads/2022/04/logo-0A.svg" /><noscript><img  class="header-image is-logo-image" alt="SUA IMPRENSA" src="https://suaimprensa.com.br/wp-content/uploads/2022/04/logo-0A.svg" title="SUA IMPRENSA" width="2244" height="709" /></noscript>
+          </a>
+        </div>  <nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Mobile Toggle">
+        <button data-nav="site-navigation" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+      <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span><span class="screen-reader-text">Menu</span>    </button>
+  </nav>
+      <nav class="main-navigation sub-menu-right" id="site-navigation" aria-label="Primary"  itemtype="https://schema.org/SiteNavigationElement" itemscope>
+      <div class="inside-navigation grid-container">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+          <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span><span class="mobile-menu">Menu</span>       </button>
+        <div id="primary-menu" class="main-nav"><ul id="menu-menu-main" class=" menu sf-menu"><li id="menu-item-436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-436"><a href="https://suaimprensa.com.br/#home" data-wpel-link="internal">Home</a></li>
+<li id="menu-item-1345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1345"><a href="https://suaimprensa.com.br/contratar-assessoria-de-imprensa/" data-wpel-link="internal">Contratar Assessoria</a></li>
+<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-211"><a href="https://suaimprensa.com.br/blog/" data-wpel-link="internal">Blog</a></li>
+<li id="menu-item-512" class="cta-hd menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-512"><a href="https://suaimprensa.com.br/#contato" data-wpel-link="internal">Fale com um especialista</a></li>
+</ul></div>     </div>
+    </nav>
+          <div class="header-widget">
+        <aside id="text-2" class="widget inner-padding widget_text">      <div class="textwidget"><div class="ling-trs "><!-- GTranslate: https://gtranslate.io/ -->
+<a href="#" class="switcher-popup glink nturl notranslate" onclick="openGTPopup(this)"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" height="32" width="32" alt="pt" data-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/pt-br.png" /><noscript><img src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/pt-br.png" height="32" width="32" alt="pt" /></noscript> <span>Portuguese</span><span style="color:#666;font-size:8px;font-weight:bold;">&#9660;</span></a>
+<div id="gt_fade" class="gt_black_overlay"></div>
+<div id="gt_lightbox" class="gt_white_content notranslate">
+<div style="position:relative;height:14px;"><span onclick="closeGTPopup()" style="position:absolute;right:2px;top:2px;font-weight:bold;font-size:12px;cursor:pointer;color:#444;font-family:cursive;">X</span></div>
+<div class="gt_languages">
+<a href="https://suaimprensa.com.br/en/" onclick="changeGTLanguage(&#039;pt|en&#039;, this);return false;" title="English" class="glink nturl" data-wpel-link="internal"><img data-gt-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/en-us.png" height="32" width="32" alt="en" /> <span>English</span></a><a href="https://suaimprensa.com.br/fr/" onclick="changeGTLanguage(&#039;pt|fr&#039;, this);return false;" title="French" class="glink nturl" data-wpel-link="internal"><img data-gt-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/fr.png" height="32" width="32" alt="fr" /> <span>French</span></a><a href="https://suaimprensa.com.br/de/" onclick="changeGTLanguage(&#039;pt|de&#039;, this);return false;" title="German" class="glink nturl" data-wpel-link="internal"><img data-gt-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/de.png" height="32" width="32" alt="de" /> <span>German</span></a><a href="https://suaimprensa.com.br/it/" onclick="changeGTLanguage(&#039;pt|it&#039;, this);return false;" title="Italian" class="glink nturl" data-wpel-link="internal"><img data-gt-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/it.png" height="32" width="32" alt="it" /> <span>Italian</span></a><a href="https://suaimprensa.com.br" onclick="changeGTLanguage(&#039;pt|pt&#039;, this);return false;" title="Portuguese" class="glink nturl selected" data-wpel-link="internal"><img data-gt-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/pt-br.png" height="32" width="32" alt="pt" /> <span>Portuguese</span></a><a href="https://suaimprensa.com.br/es/" onclick="changeGTLanguage(&#039;pt|es&#039;, this);return false;" title="Spanish" class="glink nturl" data-wpel-link="internal"><img data-gt-lazy-src="//suaimprensa.com.br/wp-content/plugins/gtranslate/flags/32/es.png" height="32" width="32" alt="es" /> <span>Spanish</span></a></div>
+</div>
+<style>
+.gt_black_overlay {display:none;position:fixed;top:0%;left:0%;width:100%;height:100%;background-color:black;z-index:2017;-moz-opacity:0.8;opacity:.80;filter:alpha(opacity=80);}
+.gt_white_content {display:none;position:fixed;top:50%;left:50%;width:341px;height:283px;margin:-141.5px 0 0 -170.5px;padding:6px 16px;border-radius:5px;background-color:white;color:black;z-index:19881205;overflow:auto;text-align:left;}
+.gt_white_content a {display:block;padding:5px 0;border-bottom:1px solid #e7e7e7;white-space:nowrap;}
+.gt_white_content a:last-of-type {border-bottom:none;}
+.gt_white_content a.selected {background-color:#ffc;}
+.gt_white_content .gt_languages {column-count:1;column-gap:10px;}
+.gt_white_content::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.3);border-radius:5px;background-color:#F5F5F5;}
+.gt_white_content::-webkit-scrollbar {width:5px;}
+.gt_white_content::-webkit-scrollbar-thumb {border-radius:5px;-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);background-color:#888;}
+</style>
+
+<script type="rocketlazyloadscript">
+function openGTPopup(a) {jQuery('.gt_white_content a img').each(function() {if(!jQuery(this)[0].hasAttribute('src'))jQuery(this).attr('src', jQuery(this).attr('data-gt-lazy-src'))});if(a === undefined){document.getElementById('gt_lightbox').style.display='block';document.getElementById('gt_fade').style.display='block';}else{jQuery(a).parent().find('#gt_lightbox').css('display', 'block');jQuery(a).parent().find('#gt_fade').css('display', 'block');}}
+function closeGTPopup() {jQuery('.gt_white_content').css('display', 'none');jQuery('.gt_black_overlay').css('display', 'none');}
+function changeGTLanguage(pair, a) {doGTranslate(pair);jQuery('a.switcher-popup').html(jQuery(a).html()+'<span style="color:#666;font-size:8px;font-weight:bold;">&#9660;</span>');closeGTPopup();}
+jQuery('.gt_black_overlay').click(function(e) {if(jQuery('.gt_white_content').is(':visible')) {closeGTPopup()}});
+</script>
+
+
+<script type="rocketlazyloadscript">
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];if(typeof ga=='function'){ga('send', 'event', 'GTranslate', lang, location.pathname+location.search);}var plang=location.pathname.split('/')[1];if(plang.length !=2 && plang != 'zh-CN' && plang != 'zh-TW' && plang != 'hmn' && plang != 'haw' && plang != 'ceb')plang='pt';if(lang == 'pt')location.href=location.protocol+'//'+location.host+gt_request_uri;else location.href=location.protocol+'//'+location.host+'/'+lang+gt_request_uri;}
+</script>
+<script type="rocketlazyloadscript">(function gt_jquery_ready() {if(!window.jQuery||!jQuery.fn.click) return setTimeout(gt_jquery_ready, 20);jQuery(document).ready(function() {var lang_html = jQuery(".gt_languages a[onclick*='|"+jQuery('html').attr('lang')+"']").html();if(typeof lang_html != "undefined")jQuery('a.switcher-popup').html(lang_html.replace("data-gt-lazy-", "")+'<span style=\"color:#666;font-size:8px;font-weight:bold;\">&#9660;</span>');});})();</script>
+</div>
+</div>
+    </aside>      </div>
+            </div>
+    </header>
+    
+  <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+      
+  <div class="content-area" id="primary">
+    <main class="site-main" id="main">
+      
+<article id="post-97" class="post-97 post type-post status-publish format-standard has-post-thumbnail hentry category-dicas category-marketing" itemtype="https://schema.org/CreativeWork" itemscope>
+  <div class="inside-article">
+        <div class="featured-image page-header-image-single grid-container grid-parent">
+      <img width="640" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20480'%3E%3C/svg%3E" class="attachment-full size-full wp-post-image" alt="como ficar famoso" decoding="async" itemprop="image" data-lazy-srcset="https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg 640w, https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1-300x225.jpg 300w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg" /><noscript><img width="640" height="480" src="https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg" class="attachment-full size-full wp-post-image" alt="como ficar famoso" decoding="async" itemprop="image" srcset="https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1.jpg 640w, https://suaimprensa.com.br/wp-content/uploads/2021/08/Como-ficar-famoso-em-2021-2-1-300x225.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></noscript>   </div>
+          <header class="entry-header" aria-label="Conteúdo">
+        <h1 class="entry-title" itemprop="headline">Como ficar famoso? Veja as principais dicas para obter sucesso e fama.</h1>   <div class="entry-meta">
+      <span class="posted-on"><time class="updated" datetime="2022-06-24T02:07:55-03:00" itemprop="dateModified">24 de junho de 2022</time><time class="entry-date published" datetime="2021-08-18T08:56:00-03:00" itemprop="datePublished">18 de agosto de 2021</time></span> <span class="byline">Por <span class="author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope><a class="url fn n" href="https://suaimprensa.com.br/blog/author/r3dator/" title="Ver todos os posts por Redator" rel="author" itemprop="url" data-wpel-link="internal"><span class="author-name" itemprop="name">Redator</span></a></span></span>    </div>
+          </header>
+      
+    <div class="entry-content" itemprop="text">
+      <span><span><a href="https://suaimprensa.com.br/" data-wpel-link="internal">Início</a></span> / <span><a href="https://suaimprensa.com.br/blog/" data-wpel-link="internal">Blog</a></span> / <span><a href="https://suaimprensa.com.br/dicas/" data-wpel-link="internal">Dicas</a></span> / <span class="breadcrumb_last" aria-current="page">Como ficar famoso? Veja as principais dicas para obter sucesso e fama.</span></span><br><br>
+
+
+<p>Como ficar famoso! Se você já se perguntou como ficar famoso, certamente este artigo é para você. E embora existam plataformas que possibilitem que isso aconteça, sem estratégias bem elaboradas o caminho pode se tornar mais difícil. Aqui nesse artigo você vai ver com ficar famoso no Instagram, TikTok e na internet também. </p><div class="lwptoc lista-post lwptoc-light lwptoc-notInherit" data-smooth-scroll="0"><div class="lwptoc_i">    <div class="lwptoc_header">
+        <b class="lwptoc_title" style="font-weight:normal;">Sabendo que esse tema é uma dúvida para muitos profissionais e para muitas empresas, nesse artigo vamos falar sobre:</b>            </div>
+<div class="lwptoc_items lwptoc_items-visible">
+    <ul class="lwptoc_itemWrap"><li class="lwptoc_item">    <a href="#Como_ficar_famoso_O_que_e_uma_pessoa_famosa">
+                <span class="lwptoc_item_label">Como ficar famoso: O que é uma pessoa famosa?</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Vantagens_e_desvantagens_de_ser_uma_pessoa_famosa">
+                <span class="lwptoc_item_label">Vantagens e desvantagens de ser uma pessoa famosa</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#O_que_torna_uma_pessoa_famosa">
+                <span class="lwptoc_item_label">O que torna uma pessoa famosa?</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Como_ficar_famoso_na_internet">
+                <span class="lwptoc_item_label">Como ficar famoso na internet?</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Como_ficar_famoso_no_Instagram">
+                <span class="lwptoc_item_label">Como ficar famoso no Instagram?</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Como_ficar_famoso_no_TikTok">
+                <span class="lwptoc_item_label">Como ficar famoso no TikTok?</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Conclusao_de_Como_ficar_famoso">
+                <span class="lwptoc_item_label">Conclusão de Como ficar famoso</span>
+    </a>
+    </li></ul></div>
+</div></div>
+
+
+
+<p>Vale lembrar que sem um conteúdo relevante para determinado público, dificilmente as estratégias vão funcionar, então a dica é aliar talento e planejamento. </p>
+
+
+
+<p>Assim, é muito provável que você alcançará a tão sonhada fama.  </p>
+
+
+
+<p>No entanto, após chegar onde se almejava é preciso trabalhar para manter-se e conseguir se consolidar em determinada posição. </p>
+
+
+
+<p>E essa é talvez a parte mais difícil de se conquistar, mas com muito trabalho e a real compreensão de como ficar famoso, além de muita sorte, já se pode ter esperança. </p>
+
+
+
+<p>Na sequência, vamos entender melhor este processo da corrida pela fama. Esperamos ajudá-lo. Boa leitura! </p>
+
+
+
+<h2><span id="Como_ficar_famoso_O_que_e_uma_pessoa_famosa"><strong>Como ficar famoso: O que é uma pessoa famosa?</strong></span></h2>
+
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><span style="font-size: inherit;">Uma pessoa famosa é aquela reconhecida por muitas pessoas, podendo ser de forma positiva ou até mesmo negativa. Como por exemplo Pablo Picasso, ficou famoso por conta das suas obras de arte.  </span></figure>
+</div>
+
+
+
+<p>Desse modo, é possível observar que cada pessoa fica famosa em determinado ramo de atuação e que esteja de acordo com o seu talento, assim como o exemplo citado anteriormente de Pablo Picasso. </p>
+
+
+
+<p>Outro exemplo é Roberto Carlos, um cantor e que ficou muito famoso por suas canções. Sendo assim, em diversos ramos existem pessoas famosas, principalmente no ramo artístico. </p>
+
+<div class="cta-blog">
+<h3>FIQUE FAMOSO</h3>
+<p>Ao contratar a nossa Assessoria de Imprensa ajudamos você a gerar um BUZZ na mídia, ajudando você a FICAR FAMOSO e a passar credibilidade como uma pessoa reconhecida no Brasil. Desse modo, não perca tempo e marque uma reunião com nossos especialistas e tire todas as suas dúvidas. Está esperando o que para ficar famoso?</p>
+<a data-mil="97" class="cta-blog-a" href="https://suaimprensa.com.br/contratar-assessoria-de-imprensa/" data-wpel-link="internal">Fale com um especialista</a></div>
+
+<h2><span id="Vantagens_e_desvantagens_de_ser_uma_pessoa_famosa"><strong>Vantagens e desvantagens de ser uma pessoa famosa</strong></span></h2>
+
+
+
+
+
+<p id="caption-attachment-680">Confira as vantagens e desvantagens</p>
+
+
+
+<p>Se tornar uma pessoa famosa é o sonho de muitas pessoas, assim, é importante ressaltar que mesmo com tantas vantagens vistas por grande parte das pessoas, existem diversas desvantagens neste meio da fama.  </p>
+
+
+
+<h3><strong>Vantagens de ser famoso: Como ficar famoso</strong></h3>
+
+
+
+<p>As vantagens são inúmeras e muitas pessoas provavelmente já devem ter se deparado.  </p>
+
+
+
+<p>Assim, a primeira vantagem a ser relatada é que as celebridades e pessoas famosas possuem tratamento especial onde estiverem. Esta é uma das principais e a vantagem mais conhecidas no mundo da fama.  </p>
+
+
+
+<p>Certamente se uma pessoa famosa entrar em um estabelecimento público, como por exemplo Brad Pitt, o seu tratamento será preferencial e diferenciado dos outros clientes. </p>
+
+
+
+<p>Além disso, as pessoas famosas são reconhecidas em todos os lugares que vão, possivelmente é uma vantagem para o ego das pessoas em saber que é reconhecida por todo lugar que visita. </p>
+
+
+
+<p>Pessoas famosas são ricas, quando uma pessoa se torna famosa também irá se tornar uma pessoa de muito poder monetário, ou seja, são fatores que andam ligados. Desse modo,  desfrutam de mansões, carros luxuosos, roupas de marca e entre outros fatores que fazem parte da fama e dinheiro. </p>
+
+
+
+<p>Oportunidades de trabalhos e negócios, um indivíduo que possui fama, por ser reconhecido por muitas pessoas também passa a receber diversas propostas de trabalhos, parcerias e “abre portas” para o mundo dos negócios em geral. </p>
+
+
+
+<p>Ainda, servem como inspiração para outras pessoas, ou seja, passam a ser uma figura que as pessoas comuns passam a imitar, seguir seus modelos e até mesmo pensar igual. </p>
+
+
+
+<h3><strong>Como ficar famoso: </strong><strong>Desvantagens de ser famoso</strong></h3>
+
+
+
+<p>Ser famoso parece ser um mundo de glorificações para pessoas que se encontram fora da fama. Além disso, parece ser um mundo sem desvantagens, mas quando analisado mais de perto, podemos observar muitas desvantagens. </p>
+
+
+
+<p>A primeira a ser relatada é que uma pessoa famosa não pode fazer coisas que uma pessoa comum faz, como por exemplo ir passear na orla de uma praia, ou ir até um mercado fazer compras para o almoço e entre outras atividades que uma pessoa famosa deve tirar da sua lista de atividades diárias. </p>
+
+
+
+<p>Além disso, pessoas famosas atraem perseguidores, diversos casos são relatados em meios de comunicação que informam sobre casos sérios de pessoas que perseguem incansavelmente celebridades. </p>
+
+
+
+<p>Outro fator a ser relatado é que pessoas famosas são julgadas constantemente sobre os seus atos e tudo que vão fazer devem tomar cuidado para não serem criticadas, principalmente no meio digital. </p>
+
+
+
+<h2><span id="O_que_torna_uma_pessoa_famosa"><strong>O que torna uma pessoa famosa?</strong></span></h2>
+
+
+
+<p>Existem alguns fatores que são fundamentais para que você possa alcançar esta fama de uma forma cada vez mais rápida. </p>
+
+
+
+<div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://suaimprensa.com.br/blog/como-aparecer-na-midia/" target="_self" rel="dofollow" class="u1027186b2b92db50d38708e87743ee09" data-wpel-link="internal"><!-- INLINE RELATED POSTS 1/3 //--><style> .u1027186b2b92db50d38708e87743ee09 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#FFFFFF; border:0!important; border-left:4px solid #FFFFFF!important; text-decoration:none; } .u1027186b2b92db50d38708e87743ee09:active, .u1027186b2b92db50d38708e87743ee09:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u1027186b2b92db50d38708e87743ee09 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u1027186b2b92db50d38708e87743ee09 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u1027186b2b92db50d38708e87743ee09 .postTitle { color:#000000; text-decoration: underline!important; font-size: 16px; } .u1027186b2b92db50d38708e87743ee09:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Leia também: </span>&nbsp; <span class="postTitle">Como aparecer na mídia</span></div></a></div><p>Sendo assim, a primeira dica a ser apresentada é que você seja único, não imite as ideias de outras pessoas. </p>
+
+
+
+<p>Invente algo que seja completamente inovador e que ninguém tenha visto até hoje. Mas, para isso você deve começar pensando em um problema para trazer uma solução inovadora e completamente diferenciada. </p>
+
+
+
+<p>Como ficar famoso? Confira as 13 dicas que preparamos para você  </p>
+
+
+
+<h3><strong>Ficar Famoso Dicas </strong></h3>
+
+
+
+<ol>
+<li>Escolha seu nível de fama </li>
+</ol>
+
+
+
+<p>Este é o primeiro passo para começar a planejar como ficar famoso. Esta resposta impacta diretamente em onde você deseja chegar com a fama. </p>
+
+
+
+<p>Vale lembrar que você pode se tornar famosos em: </p>
+
+
+
+<ul>
+<li>Bairro; </li>
+<li>Cidade; </li>
+<li>País; </li>
+<li>Faculdade. </li>
+</ul>
+
+
+
+<p>E em vários outros lugares, ou ainda no mundo inteiro, a contar com a sorte, mas deve estar ciente que este nível de fama impacta diretamente em aspectos positivos e negativos de sua vida. </p>
+
+
+
+<ol start="2">
+<li>Resolva um problema </li>
+</ol>
+
+
+
+<p>Muitos problemas que causam grandes incômodos podem ter soluções simples e de grande relevância, por isso, comece a analisar o mundo a sua volta. </p>
+
+
+
+<p>Você não precisa querer salvar o mundo, mas empregar pequenos gestos que vão gerar grandes ganhos à vida de alguém. </p>
+
+
+
+<p>Este é um dos aspectos fundamentais na compreensão de como ficar famoso. </p>
+
+
+
+<ol start="3">
+<li>Tenha uma postura de destaque </li>
+</ol>
+
+
+
+<p>Já reparou que algumas pessoas atraem a atenção de outras sem precisar de nenhum esforço? </p>
+
+
+
+<p>Isso acontece porque elas não são personagens, simplesmente ousam ser como são. </p>
+
+
+
+<p>A dica neste caso para ficar famoso, é deixar florescer os diferenciais de sua personalidade e ter um estilo propriamente seu de se vestir e de se comportar. </p>
+
+
+
+<ol start="4">
+<li>Participe de reality-show </li>
+</ol>
+
+
+
+<p>Ainda que o seu talento ainda precise ser lapidado, você precisa se deixar notar, ou seja, as pessoas precisam ver o que você sabe fazer. </p>
+
+
+
+<p>Fique atento às inscrições para participar de programas e realitys como o <a href="https://gshow.globo.com/realities/bbb/" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer">Big Brother Brasil</a>, por exemplo, isso faz você ficar famoso. </p>
+
+
+
+<ol start="5">
+<li>Tenha gestos generosos </li>
+</ol>
+
+
+
+<p>Talvez não seja o mais comum e prudente, mas ficar famoso por ter exercido um grande ato de caridade é algo possível. </p>
+
+
+
+<p>Neste caso, no entanto, é preciso ser cauteloso, já que a ação pode soar como oportunismo.  </p>
+
+
+
+<p>Para tornar sua generosidade natural, desenvolva o hábito de agir sempre de forma humanizada para que isso se torne um traço de sua personalidade. </p>
+
+
+
+<ol start="6">
+<li>Quebre grandes records  </li>
+</ol>
+
+
+
+<p>Supere o óbvio, seja em uma atividade esportiva, ou em qualquer atividade que se propuser. </p>
+
+
+
+<p>Para isso, utilize-se de algo que você já se familiariza, a fim de aumentar sua chance de ter uma alta performance. </p>
+
+
+
+<p>Chame atenção do público que pode se interessar pelo mesmo assunto ao qual você está se desafiando. </p>
+
+
+
+<ol start="7">
+<li>Poste conteúdos legais nas redes sociais </li>
+</ol>
+
+
+
+<p>Conquistar seus 5 minutinhos de fama na internet nunca foi tão fácil, a saber que passamos horas e horas conectados. </p>
+
+
+
+<p>Ao usar essa estratégia, cuide para que o seu conteúdo seja de qualidade e ofereça algo criativo e interativo.  </p>
+
+
+
+<p>Não precisa ser nada exorbitante, basta explorar o seu lado criativo e entregar algo interessante. Utilize ferramentas de qualidade minimamente boas, assim, a chance de viralizar é ainda maior. </p>
+
+
+
+<ul>
+<li>Descubra seu talento </li>
+</ul>
+
+
+
+<p>Se você já possui uma habilidade pode focar nela e oferecer conteúdos por meio daquilo que já domina. </p>
+
+
+
+<p>Mas, se existe algo que faça os seus olhos brilharem mais do que o que você já sabe fazer, invista. Pois, o trabalho feito com paixão pode alcançar resultados mais convincentes. </p>
+
+
+
+<ol start="9">
+<li>Explore a companhia de pessoas experientes </li>
+</ol>
+
+
+
+<p>Quer desenvolver um talento? Busque ajuda de pessoas que já dominam determinada atividade. </p>
+
+
+
+<p>Faça aulas, cursos, consultorias, enfim… invista no saber. </p>
+
+
+
+<ol start="10">
+<li>Separe tempo para treinar </li>
+</ol>
+
+
+
+<p>Dedique tempo ao desenvolvimento de suas habilidades. Esteja disponível para aprender, tire horas do seu dia para aprimorar o conhecimento. </p>
+
+
+
+<p>Não precisa abrir mão de sua rotina para viver só de treinamentos, mas é preciso se organizar para que a sua habilidade seja aprimorada. </p>
+
+
+
+<ol start="11">
+<li>Comece a mudança por você </li>
+</ol>
+
+
+
+<p>As marcas em geral buscam se associar a imagens que traduzem personalidade ao seu negócio. Por isso, foque nas suas características já existentes. </p>
+
+
+
+<p>Quer saber como ficar famoso? Entregue a cada um o melhor de você e evite mostrar aquele traço da sua personalidade que seja controverso. </p>
+
+
+
+<p>Entendemos que ninguém é perfeito, mas ao representar uma marca, espera-se que a personalidade em si, seja condizente com os valores preconizados por ela. </p>
+
+
+
+<ol start="12">
+<li><strong>Como ficar famoso</strong>: Marque presença nas redes sociais.  </li>
+</ol>
+
+
+
+<p>Use suas redes sociais para <a data-mil="97" href="https://suaimprensa.com.br/blog/divulgacao-de-noticias/" data-wpel-link="internal">divulgar seus conteúdos</a>, sejam eles: textos, imagens, enfim… mostre aquilo que você produz de melhor. </p>
+
+
+
+<p>É necessário também, que você se apresente com sua real personalidade e ofereça sempre coisas novas aos seus seguidores. </p>
+
+
+
+<p>Nas plataformas, foque em divulgar os trabalhos que você faz, as ações que você executa e todo o conteúdo que possa ser relevante para determinado seguimento. </p>
+
+
+
+<p>Neste caso, é necessário também ter alguns cuidados. Como não expor aquilo que pode se voltar contra você. </p>
+
+
+
+<p>Tenha cautela também ao emitir opinião, se elas ferem aos direitos humanos, é melhor emiti-las, afinal de contas, o cancelamento é tão possível quanto a fama. </p>
+
+
+
+<ol start="13">
+<li>Contrate os serviços da Sua Imprensa e se torne notícias em grande portais.  </li>
+</ol>
+
+
+
+<div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://suaimprensa.com.br/blog/prova-social/" target="_self" rel="dofollow" class="u13b5d3f511baf0afce48b9cc4556fe85" data-wpel-link="internal"><!-- INLINE RELATED POSTS 2/3 //--><style> .u13b5d3f511baf0afce48b9cc4556fe85 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#FFFFFF; border:0!important; border-left:4px solid #FFFFFF!important; text-decoration:none; } .u13b5d3f511baf0afce48b9cc4556fe85:active, .u13b5d3f511baf0afce48b9cc4556fe85:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u13b5d3f511baf0afce48b9cc4556fe85 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u13b5d3f511baf0afce48b9cc4556fe85 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u13b5d3f511baf0afce48b9cc4556fe85 .postTitle { color:#000000; text-decoration: underline!important; font-size: 16px; } .u13b5d3f511baf0afce48b9cc4556fe85:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Leia também: </span>&nbsp; <span class="postTitle">Prova social é importante? Veja os principais estudos sobre importância e benefícios</span></div></a></div><p>Os famosos sempre estão em destaque essa é a grande diferença de um famoso para uma pessoa comum, é uma maneira de mostrar como ficar famosos no tiktok e instagram passando autoridade e aparecendo na mídia. É muito importante sair em portais de notícia e investir em <a data-mil="97" href="https://suaimprensa.com.br/blog/assessoria-de-imprensa-o-que-e/" data-wpel-link="internal">assessoria de imprensa</a> e assessoria de imprensa para influenciadores, pois a autoridade do site vai passar para você e isso gera uma grande credibilidade. Se quiser saber como funciona esse serviço nos chame no WhatsApp e explicamos. </p>
+
+<div class="cta-blog">
+<h3>FIQUE FAMOSO</h3>
+<p>Ao contratar a nossa Assessoria de Imprensa ajudamos você a gerar um BUZZ na mídia, ajudando você a FICAR FAMOSO e a passar credibilidade como uma pessoa reconhecida no Brasil. Desse modo, não perca tempo e marque uma reunião com nossos especialistas e tire todas as suas dúvidas. Está esperando o que para ficar famoso?</p>
+<a data-mil="97" class="cta-blog-a" href="https://suaimprensa.com.br/contratar-assessoria-de-imprensa/" data-wpel-link="internal">Fale com um especialista</a></div>
+
+<h2><span id="Como_ficar_famoso_na_internet"><strong>Como ficar famoso na internet?</strong></span></h2>
+
+
+
+<p>A internet se transformou em um meio que muitas pessoas desejam ficar famosas, principalmente nas redes sociais. Sendo assim, veja como você pode ficar famoso na internet. </p>
+
+
+
+<ul>
+<li>Aprender mais sobre a internet e como utilizar de forma efetiva </li>
+</ul>
+
+
+
+<p>Primeiramente, em qualquer ramo em que deseja atuar, você deve ter o conhecimento técnico para que possa obter sucesso.  </p>
+
+
+
+<p>Na internet é da mesma forma, para que você possa adquirir o objetivo de ficar famoso na internet, deve aprender a parte técnica, como algoritmos e tudo que esteja atrás daquilo que você vê como produto final. </p>
+
+
+
+<p>Por exemplo, um criador de conteúdo no <a href="https://www.youtube.com/watch?v=3dEDq3jbxgo" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer">Youtube</a> que fala sobre o mercado financeiro.  </p>
+
+
+
+<p>Quando um seguidor  vai assistir um vídeo de determinado Youtuber você vê o conteúdo e parece que ele sentou ali e começou a falar sobre investimentos, por exemplo. </p>
+
+
+
+<p>Mas, na verdade não é bem assim, existe todo um estudo de algoritmos, preparação do conteúdo a ser falado, estudo por parte do Youtuber, equipamentos necessários, conhecimentos técnicos, para conseguir uma boa iluminação, som e entre outros fatores que ajuda a ficar famoso na internet. </p>
+
+
+
+<ul>
+<li>Escolha um nicho </li>
+</ul>
+
+
+
+<p>Cada um possui o seu talento, algumas pessoas cantam bem, enquanto outras dançam bem, algumas são boas para atuar.  </p>
+
+
+
+<p>Assim, você deve descobrir qual é o seu talento e no que você faz bem, ou seja, algo que chame atenção das pessoas que estão do outro lado, te seguindo, vendo seus trabalhos. </p>
+
+
+
+<p>Lembre-se que tudo deve ser feito de forma natural, não tente forçar nada, seja você mesmo e chame atenção das pessoas naturalmente.  </p>
+
+
+
+<p>Além disso, realizar um entretenimento de forma agradável e diferente, pois a inovação é um fator principal para o sucesso e consequentemente a fama. </p>
+
+
+
+<p>Ademais, se mantenha sempre atualizado e esteja atento ao comportamento do usuário neste meio.  </p>
+
+
+
+<p>Assim, as coisas acontecem de forma muito rápida na internet e você deve estar por dentro das tendências para lançar novidades também e fazer sucesso. </p>
+
+
+
+<ul>
+<li>O que significa fama para você? </li>
+</ul>
+
+
+
+<p>Defina o que é fama para você e como você pretende ficar famoso, por ter muitos seguidores, por ser muito inteligente e saber muito sobre tecnologia ou por sua personalidade. </p>
+
+
+
+<p>Este momento é importante para que você possa nortear por onde deve seguir e começar o planejamento para alcançar os objetivos desejados. </p>
+
+
+
+<ul>
+<li>Análise outros famosos na internet  </li>
+</ul>
+
+
+
+<p>Ao analisar outras pessoas você começa a identificar alguns truques, o que elas fizeram que deram certo e o que deu errado, para que você não siga e tome outro rumo para a sua carreira de celebridade. </p>
+
+
+
+<ul>
+<li>A fama na internet exige esforço </li>
+</ul>
+
+
+
+<p>Não pense que é fácil, tudo é muito difícil principalmente a fama que é um processo demorado e que leva muito tempo para ser atingido.  </p>
+
+
+
+<p>Além disso, exige muito esforço, nada de pensar que irá trabalhar 2 horas por dia e passará o restante assistindo filmes, existe um trabalho árduo por trás de todo o produto final e a fama que irá adquirir daqui um período. </p>
+
+
+
+<p>Seja uma pessoa ativa na internet, esteja sempre realizando interações por meio de comentários, apresentando o seu conteúdo e talento de forma atualizada, para que o seu público e fãs possam ver você constantemente com novidades e assuntos que interessam seus seguidores agindo para <strong>como ficar famoso no tiktok</strong> e <a data-mil="97" href="https://suaimprensa.com.br/blog/assessoria-de-imprensa-o-que-e/" data-wpel-link="internal">instagram</a>. </p>
+
+
+
+<p>Persista e nunca desista dos seus sonhos, pode ser algo demorado, você irá precisar de muita paciência, e principalmente nunca desistir. </p>
+
+
+
+<ul>
+<li>Escolha as redes sociais que você irá utilizar </li>
+</ul>
+
+
+
+<p>Plataforma e ferramentas para se tornar uma pessoa famosa é o que não falta na internet. Sendo assim, escolha um meio que você pretende se dedicar, algumas pessoas utilizam 2 plataformas. </p>
+
+
+
+<p>Mas atenção, escolha plataformas para que você se dedique e realize um trabalho constante. Algumas delas são o Youtube, TikTok, Instagram, Twitter e etc.</p>
+
+
+
+<p>Além disso, é importante ressaltar que você deve escolher um meio que faça sentido para o seu conteúdo e o que você irá apresentar como ficar famoso tiktok.  </p>
+
+
+
+<p>Por exemplo, você deseja se tornar uma pessoa famosa por ter muitos seguidores, então você deve se dedicar especialmente no Instagram e Twitter, fazendo conteúdos e trabalhando para que alcance tal objetivo de como ficar famoso na internet.  </p>
+
+
+
+<p>Porém, se o seu talento é dançar, você é um dançarino profissional e deseja mostrar o seu talento, deve se dedicar no Instagram e Youtube. Logo, deve notar que tudo depende do ramo em que você pretende atuar. </p>
+
+
+
+<ul>
+<li>Cuide da sua imagem </li>
+</ul>
+
+
+
+<div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://suaimprensa.com.br/blog/press-kit-o-que-e/" target="_self" rel="dofollow" class="u935c905d53d4e5491625291560a80447" data-wpel-link="internal"><!-- INLINE RELATED POSTS 3/3 //--><style> .u935c905d53d4e5491625291560a80447 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#FFFFFF; border:0!important; border-left:4px solid #FFFFFF!important; text-decoration:none; } .u935c905d53d4e5491625291560a80447:active, .u935c905d53d4e5491625291560a80447:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u935c905d53d4e5491625291560a80447 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u935c905d53d4e5491625291560a80447 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u935c905d53d4e5491625291560a80447 .postTitle { color:#000000; text-decoration: underline!important; font-size: 16px; } .u935c905d53d4e5491625291560a80447:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Leia também: </span>&nbsp; <span class="postTitle">Press kit o que é e os benefícios que oferece</span></div></a></div><p>Um fator principal para o sucesso nas redes sociais e internet em geral é manter uma boa imagem perante aos usuários do meio em que pretende se tornar celebridade e ficando famoso no Tiktok e Instagram.  </p>
+
+
+
+<p>Assim, nada de fazer comentários preconceituosos ou desnecessários, a não ser que você deseja se tornar uma pessoa famosa na internet de forma negativa. </p>
+
+
+
+<ul>
+<li>Crie algum conteúdo positivo e que se torna viral na internet </li>
+</ul>
+
+
+
+<p>Pode parecer uma tarefa difícil, mas se você deseja realmente se tornar uma celebridade deve trabalhar infinitamente para conseguir algo que seja produzido por você e se torne viral na internet. Isso é um ponto muito importante para ficar famoso na internet.</p>
+
+
+
+<h2><span id="Como_ficar_famoso_no_Instagram">Como ficar famoso no Instagram?</span></h2>
+
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" class="alignnone size-full wp-image-388" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20576'%3E%3C/svg%3E" alt="" width="1024" height="576" data-lazy-srcset="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1.jpg 1024w, https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1-300x169.jpg 300w, https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1-768x432.jpg 768w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1.jpg"><noscript><img decoding="async" class="alignnone size-full wp-image-388" src="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1.jpg" alt="" width="1024" height="576" srcset="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1.jpg 1024w, https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1-300x169.jpg 300w, https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-instagram-1-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></figure>
+</div>
+
+
+
+<p>O instagram é uma rede social que oferece muitas oportunidades para quem deseja entrar no mundo da fama, por este fato, separamos algumas informações para que você saiba <strong>como ficar famoso no instagram.</strong></p>
+
+
+
+<p>1- Conheça a dinâmica para ficar famoso no instagram</p>
+
+
+
+<p>O instagram é uma rede social e possui diversos códigos que ajudam na otimização de um perfil, oferecendo assim maior alcance ao perfil. </p>
+
+
+
+<p>Sendo assim, é importante conhecer e utilizar toda a base de códigos que a rede social oferece.</p>
+
+
+
+<p>2- Deixe seu perfil como conta comercial para ficar famoso</p>
+
+
+
+<p>Se você possui um perfil pessoal, é importante que você converta a sua conta para comercial. Isso fará com que as outras pessoas e o próprio código do instagram entenda que você está disposto  a fazer algo profissional e está aberto para negócios ajudando a ficar famoso no instagram</p>
+
+
+
+<p>3- Publique constantemente é essencial para ficar famoso no instagram</p>
+
+
+
+<p>Manter constância nas publicações é essencial para que você tenha maior proximidade e passe conteúdo para os seguidores. Sendo assim, faça um calendário editorial para fazer publicações no seu instagram ajudando a ficar famoso no instagram.</p>
+
+
+
+<p>4- Escolha um nicho</p>
+
+
+
+<p>Se adequar a um nicho é essencial para que você tenha os seguidores certos para que você possa vender o que deseja. Ou seja, se você gosta do nicho de beleza, não deve fazer postagens sobre carros, por exemplo, pois pode atrair outros públicos. Você escolhendo o seu nicho vai atrair a atenção para ficar famoso do <a href="https://www.apptuts.net/tutorial/redes-sociais/hashtags-mais-populares-no-instagram/" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer">instagram</a> para o seu publico. </p>
+
+
+
+<p>5- Utilize hashtags</p>
+
+
+
+<p>A utilização das hashtags é algo essencial para que você possa estar bem posicionado no Instagram e interagir com os conteúdos da rede social. Além disso, devem estar totalmente ligados ao seu nicho.  Clique no <a href="https://www.apptuts.net/tutorial/redes-sociais/hashtags-mais-populares-no-instagram/" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer">link</a> e veja as hashtags para ficar famoso no instagram</p>
+
+
+
+<p>6- Faça stories e live</p>
+
+
+
+<p>Estas ferramentas que são oferecidas pela rede social são importantes para que você interaja melhor com os seus seguidores e aumente a autoridade do seu perfil. Sendo assim, utilize ao máximo todas as ferramentas que este meio oferece e trabalhe constantemente para ficar famoso no instagram.</p>
+
+
+
+<h2><span id="Como_ficar_famoso_no_TikTok">Como ficar famoso no TikTok?</span></h2>
+
+<p><img decoding="async" class="alignnone size-full wp-image-389" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20360'%3E%3C/svg%3E" alt="Como ficar famoso no TikTok?" width="640" height="360" data-lazy-srcset="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-tiktok-2.jpg 640w, https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-tiktok-2-300x169.jpg 300w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-tiktok-2.jpg"><noscript><img decoding="async" class="alignnone size-full wp-image-389" src="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-tiktok-2.jpg" alt="Como ficar famoso no TikTok?" width="640" height="360" srcset="https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-tiktok-2.jpg 640w, https://suaimprensa.com.br/wp-content/uploads/2022/03/como-ficar-famoso-no-tiktok-2-300x169.jpg 300w" sizes="(max-width: 640px) 100vw, 640px"></noscript></p>
+
+<div class="wp-block-image"> </div>
+
+
+
+<p>O TikTok é uma rede social, assim como todas as outras, porém cada um possui um nicho e tipo de conteúdo que é apresentado. </p>
+
+
+
+<p>O TikTok se diferencia por ser uma rede em que os usuários compartilham pequenos vídeos, podendo ser de danças ou não. Desse modo, veja a seguir <strong>como ficar famoso </strong>no TikTok.</p>
+
+
+
+<p>1- Saiba qual é o seu público</p>
+
+
+
+<p>Conhecer o seu público e saber do que o mesmo gosta é totalmente importante para manter a sua imagem nestas redes sociais, por este fato, estude o seu público para ficar famoso no Tiktok.</p>
+
+
+
+<p>2- Ajude outros produtores de conteúdos a ficar famoso no Tiktok</p>
+
+
+
+<p>Fazer parceria com outros criadores é essencial para que a sua imagem cresça na rede social. Sendo assim, ajude outros produtores, crie vídeos juntos e aumente o engajamento do seu perfil.</p>
+
+
+
+<p>3- Participe de desafios que estão na moda</p>
+
+
+
+<p>Sabemos que o TikTok é um local que lança muitos desafios de dancinha, dublagens e muito mais. Sendo assim, é importante que você esteja na moda e esteja dentro dos desafios isso ajuda muito a alavancar o seu perfil ajudando você a ficar famoso no Tiktok.</p>
+
+
+
+<h2><span id="Conclusao_de_Como_ficar_famoso">Conclusão de Como ficar famoso</span></h2>
+
+
+
+<p>Parece simples, mas a descoberta de como ficar famoso é um processo que requer: conteúdo relevante, estratégias bem elaboradas e muita sorte. </p>
+
+
+
+<p>O fato de não conseguir atingir seu objetivo não deve ser levado para o lado pessoal, pois atingir um alto patamar de fama é algo difícil, tanto que o grupo dos famosos é seleto. </p>
+
+
+
+<p>Mas, se você deseja tentar, precisa contar com uma assessoria de imprensa que possa lhe auxiliar na tomada de decisões. </p>
+
+
+
+<p>Esta iniciativa não lhe garante a fama, mas lhe deixa bem à frente da grande maioria.  </p>
+
+
+
+<p>Tenha acesso às nossas soluções e venha ficar famoso conosco da <a data-mil="97" href="https://suaimprensa.com.br/" data-wpel-link="internal">Sua Imprensa</a>. Fique por dentro de todas as nossas atribuições em nosso site.  </p>
+
+
+
+<p>Leia também: <a data-mil="97" href="https://suaimprensa.com.br/como-aparecer-na-midia/" data-wpel-link="internal">Como aparecer na mídia</a></p>
+
+
+
+
+
+
+<div class="cta-blog"><h3>Contrate nossa assessoria de imprensa!</h3>
+    <p>Ao contratar assessoria de imprensa o seu negócio passa a ter credibilidade, tendo maior visibilidade no mercado, assim, constrói autoridade e muito mais. Desse modo, não perca tempo e tenha a sua empresa bem posicionada no mercado em que atua. Então, está esperando o que para sair na frente dos seus concorrentes e ter grande ocupação no mercado?</p> <a href="https://suaimprensa.com.br/contratar-assessoria-de-imprensa/" class="cta-blog-a" data-wpel-link="internal">Fale com um especialista</a></div>    
+        </div>
+
+        <footer class="entry-meta" aria-label="Entry meta">
+      <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z" /></svg></span><span class="screen-reader-text">Categorias </span><a href="https://suaimprensa.com.br/dicas/" rel="category tag" data-wpel-link="internal">Dicas</a>, <a href="https://suaimprensa.com.br/marketing/" rel="category tag" data-wpel-link="internal">Marketing</a></span>     <nav id="nav-below" class="post-navigation" aria-label="Single Post">
+      <span class="screen-reader-text">Navegação de post</span>
+
+      <div class="nav-previous"><span class="gp-icon icon-arrow-left"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 138.212c0 2.265-1.133 4.813-2.832 6.512L64.276 256.001l111.317 111.277c1.7 1.7 2.832 4.247 2.832 6.513 0 2.265-1.133 4.813-2.832 6.512L161.43 394.46c-1.7 1.7-4.249 2.832-6.514 2.832-2.266 0-4.816-1.133-6.515-2.832L16.407 262.514c-1.699-1.7-2.832-4.248-2.832-6.513 0-2.265 1.133-4.813 2.832-6.512l131.994-131.947c1.7-1.699 4.249-2.831 6.515-2.831 2.265 0 4.815 1.132 6.514 2.831l14.163 14.157c1.7 1.7 2.832 3.965 2.832 6.513z" fill-rule="nonzero" /></svg></span><span class="prev" title="Anterior"><a href="https://suaimprensa.com.br/blog/saiba-como-ter-sua-materia-encontrada-no-google/" rel="prev" data-wpel-link="internal">Saiba como ter sua matéria encontrada no Google</a></span></div><div class="nav-next"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span><span class="next" title="Próximo"><a href="https://suaimprensa.com.br/blog/prova-social/" rel="next" data-wpel-link="internal">Prova social é importante? Veja os principais estudos sobre importância e benefícios</a></span></div>   </nav>
+        </footer>
+      </div>
+</article>
+    </main>
+  </div>
+
+  <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+  <div class="inside-right-sidebar">
+    <aside id="categories-2" class="widget inner-padding widget_categories"><h2 class="widget-title">Categorias</h2>
+      <ul>
+          <li class="cat-item cat-item-9"><a href="https://suaimprensa.com.br/dicas/" data-wpel-link="internal">Dicas</a>
+</li>
+  <li class="cat-item cat-item-6"><a href="https://suaimprensa.com.br/empreendedorismo/" data-wpel-link="internal">Empreendedorismo</a>
+</li>
+  <li class="cat-item cat-item-1"><a href="https://suaimprensa.com.br/geral/" data-wpel-link="internal">Geral</a>
+</li>
+  <li class="cat-item cat-item-7"><a href="https://suaimprensa.com.br/marketing/" data-wpel-link="internal">Marketing</a>
+</li>
+  <li class="cat-item cat-item-8"><a href="https://suaimprensa.com.br/seo/" data-wpel-link="internal">SEO</a>
+</li>
+      </ul>
+
+      </aside>
+    <aside id="recent-posts-2" class="widget inner-padding widget_recent_entries">
+    <h2 class="widget-title">Veja também</h2>
+    <ul>
+                      <li>
+          <a href="https://suaimprensa.com.br/blog/marketing-de-conteudo-o-que-e/" data-wpel-link="internal">Marketing de Conteúdo &#8211; O que é?</a>
+                  </li>
+                      <li>
+          <a href="https://suaimprensa.com.br/blog/assessoria-de-comunicacao/" data-wpel-link="internal">Assessoria de comunicação: o que é?</a>
+                  </li>
+                      <li>
+          <a href="https://suaimprensa.com.br/blog/divulgacao-de-livros-saiba-como-fazer/" data-wpel-link="internal">Divulgação de livros saiba como fazer</a>
+                  </li>
+          </ul>
+
+    </aside>  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="site-footer">
+        <div id="footer-widgets" class="site footer-widgets">
+        <div class="footer-widgets-container grid-container">
+          <div class="inside-footer-widgets">
+              <div class="footer-widget-1">
+    <aside id="custom_html-2" class="widget_text widget inner-padding widget_custom_html"><div class="textwidget custom-html-widget">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" xml:space="preserve" width="150px" height="47px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewbox="0 0 224400 70863"><defs><style type="text/css"> .fil1 {fill:#D30000} .fil3 {fill:#FEFEFE;fill-rule:nonzero} .fil0 {fill:black;fill-rule:nonzero} .fil2 {fill:#D30000;fill-rule:nonzero} </style> </defs> <symbol id="fuse" viewbox="-11811 -89356 247775 249353"> <path class="fil0" d="M111835 113322c-8731,0 -16844,-1839 -23466,-5319l-71309 -37464 -21368 12902c-10157,6132 -9979,15531 396,20983l98627 51821c4790,2515 10914,3753 17119,3753 7247,0 14600,-1686 20072,-4988l96552 -58307c10157,-6134 9980,-15534 -395,-20982l-20505 -10778 -68600 41429c-7424,4480 -17055,6950 -27124,6950l1 0zm0 0l0 0 0 0z"/> <path class="fil0" d="M228065 19079l-17076 -8972 -39764 24011 -6827 4122 -6823 4121 -18615 11242c-7424,4486 -17059,6953 -27123,6953 -8731,0 -16844,-1839 -23466,-5315l-21327 -11208 -7059 -3705 -7059 -3709 -39297 -20651 -17935 10832c-10157,6134 -9983,15531 393,20982l20507 10775 7059 3708 7056 3709 64008 33629c4786,2515 10914,3750 17120,3750 7243,0 14598,-1682 20067,-4985l61538 -37160 6827 -4122 6824 -4121 21368 -12903c10156,-6132 9979,-15531 -397,-20983l1 0zm0 0l0 0 0 0z"/> <path class="fil0" d="M228065 -33785l-98630 -51818c-4787,-2518 -10911,-3753 -17121,-3753 -7242,0 -14598,1686 -20068,4988l-96552 58307c-10157,6131 -9983,15527 393,20979l17075 8973 7060 3708 7058 3709 39297 20648 7059 3705 7059 3712 14022 7369c4786,2515 10914,3750 17120,3750 7243,0 14599,-1685 20068,-4988l11552 -6977 6827 -4122 6823 -4121 39764 -24012 6827 -4121 6824 -4121 17939 -10833c10156,-6131 9979,-15530 -396,-20982l0 0zm0 0l0 0 0 0z"/> </symbol> <g id="Camada_x0020_1"> <metadata id="CorelCorpID_0Corel-Layer"/> <g id="_1788775332560"> <path id="Fill-1" class="fil1" d="M35691 56657c-2261,0 -4362,-473 -6078,-1371l-18469 -9656 -5535 3326c-2631,1580 -2585,4003 103,5408l25545 13357c1241,648 2827,967 4434,967 1877,0 3782,-434 5199,-1285l25009 -15029c2630,-1581 2584,-4004 -103,-5408l-5311 -2778 -17768 10678c-1923,1155 -4418,1791 -7026,1791z"/> <path id="Fill-4" class="fil1" d="M65960 30975l-4434 -2353 -10327 6296 -1773 1081 -1772 1081 -4834 2948c-1928,1176 -4430,1823 -7044,1823 -2267,0 -4374,-482 -6094,-1394l-5538 -2939 -1833 -971 -1834 -973 -10205 -5415 -4658 2840c-2637,1609 -2592,4073 102,5502l5326 2826 1833 972 1833 973 16622 8818c1243,660 2835,983 4446,983 1881,0 3792,-441 5212,-1307l15981 -9744 1773 -1081 1772 -1081 5549 -3383c2638,-1608 2592,-4073 -103,-5502z"/> <path id="Fill-6" class="fil1" d="M65960 16559l-25614 -13352c-1243,-649 -2833,-967 -4446,-967 -1881,0 -3791,434 -5211,1285l-25075 15024c-2637,1580 -2592,4001 102,5405l4435 2312 1833 956 1833 956 10205 5320 1834 954 1833 957 3641 1899c1243,647 2835,966 4446,966 1881,0 3792,-434 5212,-1285l3000 -1798 1773 -1062 1772 -1062 10326 -6187 1773 -1062 1772 -1062 4659 -2791c2638,-1580 2592,-4002 -103,-5406z"/> </g> <path class="fil2" d="M91450 35998c5655,0 9673,-2976 9673,-7999 0,-5506 -4427,-6882 -8370,-8073 -4055,-1227 -4688,-2046 -4688,-3236 0,-1042 930,-1972 2790,-1972 2381,0 3609,1153 4502,3014l5022 -2939c-1897,-3832 -5246,-5878 -9524,-5878 -4501,0 -8742,2901 -8742,7924 0,4985 3794,6845 7663,7924 3907,1079 5395,1711 5395,3311 0,1004 -707,2120 -3535,2120 -2938,0 -4538,-1451 -5468,-3608l-5134 2976c1451,3832 4948,6436 10416,6436zm27158 0c5729,0 10044,-3348 10044,-8929l0 -17633 -5952 0 0 17112c0,1972 -930,3646 -4092,3646 -3162,0 -4092,-1674 -4092,-3646l0 -17112 -5953 0 0 17633c0,5581 4316,8929 10045,8929zm34784 -521l6510 0 -8854 -26041 -7589 0 -8854 26041 6510 0 1302 -4092 9673 0 1302 4092zm-9189 -9673l3051 -9561 3050 9561 -6101 0z"/> <path class="fil3" d="M81108 42435l0 18422 4210 0 0 -18422 -4210 0zm28093 0l-4211 0 -5000 8185 -5000 -8185 -4211 0 0 18422 4211 0 0 -10711 4763 7816 474 0 4763 -7816 0 10711 4211 0 0 -18422zm12434 0l-6974 0 0 18422 4211 0 0 -5789 2763 0c3632,0 6448,-2816 6448,-6317 0,-3500 -2816,-6316 -6448,-6316zm0 8685l-2763 0 0 -4737 2763 0c1290,0 2237,1026 2237,2368 0,1343 -947,2369 -2237,2369zm20541 9737l4526 0 -3921 -6763c2026,-1027 3395,-3079 3395,-5343 0,-3500 -2816,-6316 -6316,-6316l-7369 0 0 18422 4211 0 0 -6053 2000 0 3474 6053zm-5474 -14474l3158 0c1158,0 2105,1026 2105,2368 0,1343 -947,2369 -2105,2369l-3158 0 0 -4737zm18487 10421l0 -3263 6579 0 0 -4000 -6579 0 0 -3053 7237 0 0 -4053 -11448 0 0 18422 11580 0 0 -4053 -7369 0zm22304 -14369l0 10001 -7106 -10001 -3158 0 0 18422 4211 0 0 -10000 7105 10000 3158 0 0 -18422 -4210 0zm15855 18791c4001,0 6843,-2106 6843,-5659 0,-3894 -3132,-4868 -5922,-5710 -2868,-869 -3315,-1448 -3315,-2290 0,-737 657,-1395 1973,-1395 1685,0 2553,816 3185,2132l3552 -2079c-1342,-2711 -3710,-4158 -6737,-4158 -3184,0 -6184,2053 -6184,5605 0,3527 2684,4843 5421,5606 2763,763 3816,1211 3816,2342 0,711 -500,1500 -2500,1500 -2079,0 -3211,-1026 -3869,-2553l-3631 2106c1026,2710 3500,4553 7368,4553zm22699 -369l4605 0 -6263 -18422 -5369 0 -6263 18422 4605 0 921 -2895 6842 0 922 2895zm-6501 -6842l2158 -6764 2158 6764 -4316 0z"/> </g></svg></div></aside><aside id="nav_menu-6" class="widget inner-padding widget_nav_menu"><div class="menu-social-container"><ul id="menu-social" class="menu"><li id="menu-item-1901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1901"><a href="https://www.facebook.com/suaimprensa" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer"><i class="_mi _before dashicons dashicons-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
+<li id="menu-item-1899" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1899"><a href="https://www.instagram.com/suaimprensa/" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer"><i class="_mi _before fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+<li id="menu-item-1900" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1900"><a href="https://www.linkedin.com/company/suaimprensa/" data-wpel-link="external" target="_blank" rel="nofollow external noopener noreferrer"><i class="_mi _before fab fa-linkedin" aria-hidden="true"></i><span>Linkedin</span></a></li>
+</ul></div></aside> </div>
+    <div class="footer-widget-2">
+    <aside id="nav_menu-2" class="widget inner-padding widget_nav_menu"><h2 class="widget-title">Empresa</h2><div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-1162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1162"><a href="https://suaimprensa.com.br/sobre-nos/" data-wpel-link="internal">Sobre nós</a></li>
+<li id="menu-item-647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-647"><a href="https://suaimprensa.com.br/depoimentos/" data-wpel-link="internal">Depoimentos</a></li>
+<li id="menu-item-648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-648"><a href="https://suaimprensa.com.br/contato/" data-wpel-link="internal">Entre em contato</a></li>
+</ul></div></aside> </div>
+    <div class="footer-widget-3">
+    <aside id="nav_menu-4" class="widget inner-padding widget_nav_menu"><h2 class="widget-title">Nossas soluções</h2><div class="menu-solucoes-container"><ul id="menu-solucoes" class="menu"><li id="menu-item-1377" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1377"><a href="https://suaimprensa.com.br/contratar-assessoria-de-imprensa/" data-wpel-link="internal">Contratar Assessoria</a></li>
+<li id="menu-item-1186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1186"><a href="https://suaimprensa.com.br/selo-de-verificacao-o-selo-azul/" data-wpel-link="internal">Selo de Verificação: O Selo Azul</a></li>
+<li id="menu-item-1142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1142"><a href="https://suaimprensa.com.br/comprar-backlinks-seo/" data-wpel-link="internal">Comprar Backlinks Brasileiros SEO</a></li>
+</ul></div></aside> </div>
+    <div class="footer-widget-4">
+    <aside id="nav_menu-3" class="widget inner-padding widget_nav_menu"><h2 class="widget-title">Seja um Parceiro</h2><div class="menu-menu-parceiros-container"><ul id="menu-menu-parceiros" class="menu"><li id="menu-item-868" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-868"><a href="https://suaimprensa.com.br/parceria-jornalistas-e-assessores-de-imprensa/" data-wpel-link="internal">Jornalistas e Assessores de Imprensa</a></li>
+<li id="menu-item-869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-869"><a href="https://suaimprensa.com.br/parcerias/" data-wpel-link="internal">Seja um Portal Parceiro</a></li>
+<li id="menu-item-1029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1029"><a href="https://suaimprensa.com.br/cadastre-se-em-nosso-mailing-de-jornalista/" data-wpel-link="internal">Cadastre-se em nosso Mailing</a></li>
+</ul></div></aside> </div>
+            </div>
+        </div>
+      </div>
+          <footer class="site-info" aria-label="Site"  itemtype="https://schema.org/WPFooter" itemscope>
+      <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+              <p class="copyright mdn-Text mdn-Text--caption mdn-Text--inverse">Copyright © 2022 - SUA IMPRENSA - CNPJ: 37.982.508/0001-42</p>
+  <a href="https://suaimprensa.com.br/politica-de-privacidade-e-termos-de-uso/" style="color: #fff" data-wpel-link="internal">Política de privacidade</a>
+            </div>
+      </div>
+    </footer>
+    </div>
+
+<a title="Voltar ao topo" aria-label="Voltar ao topo" rel="nofollow" href="#" class="generate-back-to-top" style="opacity:0;visibility:hidden;" data-scroll-speed="400" data-start-scroll="300">
+          <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero" /></svg></span>
+        </a><div id="pum-1865" class="pum pum-overlay pum-theme-1857 pum-theme-lightbox popmake-overlay click_open" data-popmake="{&quot;id&quot;:1865,&quot;slug&quot;:&quot;whatsapp-form&quot;,&quot;theme_id&quot;:1857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.whatsapp-fixed-btn&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;custom&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;300px&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;330px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:&quot;1&quot;,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;10&quot;,&quot;position_right&quot;:&quot;10&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;bottom&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" 
+                   >
+
+  <div id="popmake-1865" class="pum-container popmake theme-1857 size-custom">
+
+        
+
+        
+
+    
+
+        <div class="pum-content popmake-content" tabindex="0">
+      <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+  <div class="wpb_text_column wpb_content_element " >
+    <div class="wpb_wrapper">
+      <p>Envie sua mensagem que entraremos em contato via WhatsApp, mas antes de iniciarmos nossa conversa, se apresente.</p>
+
+    </div>
+  </div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});</script>
+                <div class='gf_browser_chrome gform_wrapper gravity-theme' id='gform_wrapper_16' ><div id='gf_16' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <span class='gform_description'></span>
+              <p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indica campos obrigatórios</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_16' id='gform_16'  action='/blog/como-ficar-famoso/#gf_16' novalidate> 
+ <input type='hidden' class='gforms-pum' value='{"closepopup":false,"closedelay":3,"openpopup":false,"openpopup_id":0}' />
+                        <div class='gform_body gform-body'><div id='gform_fields_16' class='gform_fields top_label form_sublabel_below description_below'><div id="field_16_1"  class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_16_1"><label class='gfield_label' for='input_16_1' >Nome<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_16_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /> </div></div><div id="field_16_3"  class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_16_3"><label class='gfield_label' for='input_16_3' >Telefone ou Celular<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_16_3' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /> </div></div><div id="field_16_7"  class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_16_7"><label class='gfield_label' for='input_16_7' >Selecione o serviço<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_select'><select name='input_7' id='input_16_7' class='large gfield_select'    aria-required="true" aria-invalid="false" ><option value='Assessoria de imprensa' >Assessoria de imprensa</option><option value='SEO - Backlinks' >SEO - Backlinks</option><option value='Selo de verificação' >Selo de verificação</option></select></div></div></div></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_16' class='gform_button button' value='Enviar'  onclick='if(window["gf_submitting_16"]){return false;}  if( !jQuery("#gform_16")[0].checkValidity || jQuery("#gform_16")[0].checkValidity()){window["gf_submitting_16"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_16"]){return false;} if( !jQuery("#gform_16")[0].checkValidity || jQuery("#gform_16")[0].checkValidity()){window["gf_submitting_16"]=true;}  jQuery("#gform_16").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=16&amp;title=&amp;description=1&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_16' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='16' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_16' value='WyJbXSIsIjY3MjM2NDllZmVhZjVlMDA4NjAyYjkzNjQ5YmY5YWJlIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_16' id='gform_target_page_number_16' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_16' id='gform_source_page_number_16' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_16' id='gform_ajax_frame_16' title='Este iframe contém a lógica necessária para manusear os formulários Gravity Forms movidos a AJAX.'></iframe>
+                <script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 16, 'https://suaimprensa.com.br/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery('#gform_ajax_frame_16').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_16');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_16').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_16').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_16').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_16').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_16').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_16').val();gformInitSpinner( 16, 'https://suaimprensa.com.br/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [16, current_page]);window['gf_submitting_16'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_16').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_16').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [16]);window['gf_submitting_16'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_16').text());}, 50);}else{jQuery('#gform_16').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [16, current_page]);} );} );
+</script>
+</div></div></div></div>
+    </div>
+
+
+        
+
+              <button type="button" class="pum-close popmake-close" aria-label="Close">
+      ×     </button>
+    
+  </div>
+
+</div>
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52PK6QH" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><script type="rocketlazyloadscript" id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script>    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+      let cust_login = document.getElementById("loginform");
+      if(cust_login !== null) {
+        var recaptcha_script = document.createElement('script');
+        recaptcha_script.setAttribute('src','https://www.google.com/recaptcha/api.js?hl=pt-BR&ver=5.1.4');
+        document.head.appendChild(recaptcha_script);
+      }
+    </script>
+    
+<script type="rocketlazyloadscript" id='daim-track-internal-links-js-before'>
+window.DAIM_PARAMETERS = {ajax_url: "https://suaimprensa.com.br/wp-admin/admin-ajax.php",nonce: "7c3f96a2bb"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://suaimprensa.com.br/wp-content/cache/min/1/wp-content/plugins/interlinks-manager/public/assets/js/track-internal-links.js?ver=1673281184' id='daim-track-internal-links-js'></script>
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/sua752\/|\/wp-admin\/|\/logout\/|\/sua752\/|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/suaimprensa.com.br","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<!--[if lte IE 11]>
+<script src='https://suaimprensa.com.br/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.1.3' id='generate-classlist-js'></script>
+<![endif]-->
+<script id='generate-menu-js-extra'>
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+</script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.1.3' id='generate-menu-js'></script>
+<script id='generate-back-to-top-js-extra'>
+var generatepressBackToTop = {"smooth":"1"};
+</script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-content/themes/generatepress/assets/js/back-to-top.min.js?ver=3.1.3' id='generate-back-to-top-js'></script>
+<script id='wpb_composer_front_js-js-extra'>
+var vcData = {"currentTheme":{"slug":"generatepress"}};
+</script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.9.0' id='wpb_composer_front_js-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id='wp-a11y-js-translations'>
+( function( domain, translations ) {
+  var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+  localeData[""].domain = domain;
+  wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2023-01-08 13:50:14+0000","generator":"GlotPress\/4.0.0-alpha.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"pt_BR"},"Notifications":["Notifica\u00e7\u00f5es"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+</script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/dist/a11y.min.js?ver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
+<script type="rocketlazyloadscript" defer='defer' src='https://suaimprensa.com.br/wp-content/plugins/gravityforms/js/jquery.maskedinput.min.js?ver=2.6.1.3' id='gform_masked_input-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>
+<script id='popup-maker-site-js-extra'>
+var pum_vars = {"version":"1.17.1","pm_dir_url":"https:\/\/suaimprensa.com.br\/wp-content\/plugins\/popup-maker\/","ajaxurl":"https:\/\/suaimprensa.com.br\/wp-admin\/admin-ajax.php","restapi":"https:\/\/suaimprensa.com.br\/wp-json\/pum\/v1","rest_nonce":null,"default_theme":"1856","debug_mode":"","disable_tracking":"","home_url":"\/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"analytics_route":"analytics","analytics_api":"https:\/\/suaimprensa.com.br\/wp-json\/pum\/v1"};
+var pum_sub_vars = {"ajaxurl":"https:\/\/suaimprensa.com.br\/wp-admin\/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-1865":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".whatsapp-fixed-btn"}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"1857","size":"custom","responsive_min_width":"0%","responsive_max_width":"300px","custom_width":"330px","custom_height_auto":true,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"bottom","open_sound":"none","custom_sound":"","location":"center","position_top":"100","position_bottom":"10","position_left":"0","position_right":"10","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"lightbox","id":1865,"slug":"whatsapp-form"}};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://suaimprensa.com.br/wp-content/cache/min/1/wp-content/uploads/pum/pum-site-scripts.js?ver=1673281184' id='popup-maker-site-js'></script>
+<script type="rocketlazyloadscript" src='https://suaimprensa.com.br/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.4' id='lwptoc-main-js'></script>
+<style>.lwptoc .lwptoc_i{background-color:#ffffff;}</style><script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 16) {jQuery('#input_16_3').mask('(99) 9 9999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [16, 1]) } );
+</script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://suaimprensa.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+<script type="rocketlazyloadscript">"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://suaimprensa.com.br/wp-content/cache/min/1/01945e7b8e94897c416ea44a11c1ceec.css" media="all" data-minify="1" /></noscript></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1673285519 -->
